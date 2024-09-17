@@ -68,4 +68,4 @@ SELECT
     m."inserted_at",
     m."updated_at"
 FROM {{ source('public', 'Noora_Messages') }} AS m
-LEFT JOIN status_pivot sp ON m."id" = sp."message_id";
+LEFT JOIN status_pivot sp ON m."id" = sp."message_id"
