@@ -7,7 +7,7 @@ WITH status_ranked AS (
     FROM 
 	public."Noora_Statuses"
 )
-
+,
 status_pivot AS (
     SELECT
         "message_id",
