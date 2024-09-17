@@ -34,7 +34,7 @@ status_pivot AS (
     GROUP BY message_id
 )
 SELECT
-    m.id,
+    m.id AS message_id,
     m.content,
     m.message_type,
     m.masked_addressees,
