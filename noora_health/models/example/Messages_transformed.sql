@@ -1,3 +1,4 @@
+
 WITH status_ranked AS (
     SELECT
         message_id,
@@ -20,7 +21,7 @@ status_pivot AS (
         MAX(CASE WHEN rn = 4 THEN timestamp END) AS timestamp_status_4,
         MAX(CASE WHEN rn = 5 THEN status END) AS status_5,
         MAX(CASE WHEN rn = 5 THEN timestamp END) AS timestamp_status_5,
-		MAX(CASE WHEN rn = 6 THEN status END) AS status_6,
+		 MAX(CASE WHEN rn = 6 THEN status END) AS status_6,
         MAX(CASE WHEN rn = 6 THEN timestamp END) AS timestamp_status_6,
         MAX(CASE WHEN rn = 7 THEN status END) AS status_7,
         MAX(CASE WHEN rn = 7 THEN timestamp END) AS timestamp_status_7,
@@ -34,7 +35,7 @@ status_pivot AS (
     GROUP BY message_id
 )
 SELECT
-    m.id AS message_id,
+    m.id as message_id,
     m.content,
     m.message_type,
     m.masked_addressees,
@@ -63,10 +64,10 @@ SELECT
     sp.timestamp_status_9,
     sp.status_10,
     sp.timestamp_status_10,
+    sp.message_id as status_message_id,
     m.rendered_content,
     m.uuid,
     m.inserted_at,
-    m.updated_at,
-     m._airbyte_meta AS message_meta -- Alias _airbyte_meta from Noora_Messages
+    m.updated_at
 FROM public."Noora_Messages" m
 LEFT JOIN status_pivot sp ON m.id=sp.message_id;
