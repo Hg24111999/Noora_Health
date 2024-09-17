@@ -4,9 +4,10 @@ WITH status_ranked AS (
         "status",
         "timestamp",
         ROW_NUMBER() OVER (PARTITION BY message_id ORDER BY timestamp DESC) AS "rn"
-    FROM public."Noora_Statuses"
+    FROM 
+	public."Noora_Statuses"
 )
-,
+
 status_pivot AS (
     SELECT
         "message_id",
