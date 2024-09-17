@@ -63,7 +63,6 @@ SELECT
     sp.timestamp_status_9,
     sp.status_10,
     sp.timestamp_status_10,
-    sp.message_id as status_message_id,
     m.rendered_content,
     m.uuid,
     m.inserted_at,
