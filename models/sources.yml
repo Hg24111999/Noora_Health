@@ -3,7 +3,7 @@ version: 2
 
 sources:
   - name: public
-    database: erp_db  # Replace with your database name
+    database: public  # Replace with your database name
     schema: public
     tables:
       - name: Noora_Messages
