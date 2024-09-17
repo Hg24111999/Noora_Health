@@ -1,0 +1,9 @@
+# models/sources.yml
+version: 2
+
+sources:
+  - name: public
+    schema: public
+    tables:
+      - name: Noora_Messages
+      - name: Noora_Statuses
