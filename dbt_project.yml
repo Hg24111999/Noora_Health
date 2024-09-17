@@ -33,4 +33,4 @@ models:
  noora_health:
   # Config indicated by + and applies to all files under models/example/
     +materialized: table
-    +schema: noora_health
+    +schema: public
