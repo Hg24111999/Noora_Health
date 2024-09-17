@@ -70,4 +70,4 @@ SELECT
     m."inserted_at",
     m."updated_at"
 FROM public."Noora_Messages" m
-LEFT JOIN status_pivot sp ON m.id=sp.message_id;
+LEFT JOIN status_pivot sp ON m.id=sp.message_id
