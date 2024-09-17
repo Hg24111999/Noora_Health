@@ -20,7 +20,7 @@ snapshot-paths: ["snapshots"]
 
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
-  - "dbt_packages"
+  
 
 
 # Configuring models
@@ -33,4 +33,5 @@ models:
   noora_health:
     # Config indicated by + and applies to all files under models/example/
     example:
-      +materialized: view
+      +materialized: table
+      +schema: noora_health
