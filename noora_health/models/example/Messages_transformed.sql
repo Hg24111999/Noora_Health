@@ -20,7 +20,7 @@ status_pivot AS (
         MAX(CASE WHEN rn = 4 THEN timestamp END) AS timestamp_status_4,
         MAX(CASE WHEN rn = 5 THEN status END) AS status_5,
         MAX(CASE WHEN rn = 5 THEN timestamp END) AS timestamp_status_5,
-		 MAX(CASE WHEN rn = 6 THEN status END) AS status_6,
+		MAX(CASE WHEN rn = 6 THEN status END) AS status_6,
         MAX(CASE WHEN rn = 6 THEN timestamp END) AS timestamp_status_6,
         MAX(CASE WHEN rn = 7 THEN status END) AS status_7,
         MAX(CASE WHEN rn = 7 THEN timestamp END) AS timestamp_status_7,
@@ -66,6 +66,7 @@ SELECT
     m.rendered_content,
     m.uuid,
     m.inserted_at,
-    m.updated_at
+    m.updated_at,
+     m._airbyte_meta AS message_meta -- Alias _airbyte_meta from Noora_Messages
 FROM public."Noora_Messages" m
 LEFT JOIN status_pivot sp ON m.id=sp.message_id;
