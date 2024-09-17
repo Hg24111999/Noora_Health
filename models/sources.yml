@@ -3,6 +3,7 @@ version: 2
 
 sources:
   - name: public
+    database: erp_db 
     schema: public
     tables:
       - name: Noora_Messages
