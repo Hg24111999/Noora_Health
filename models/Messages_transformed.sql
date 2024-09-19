@@ -4,7 +4,7 @@ WITH status_ranked AS (
         "status",
         "timestamp",
         ROW_NUMBER() OVER (PARTITION BY message_id ORDER BY timestamp DESC) AS "rn"
-    FROM airbyte_internal.public_raw__stream_noora_statuses
+    FROM public.Noora_Statuses
 )
 ,
 status_pivot AS (
@@ -68,5 +68,5 @@ SELECT
     m."uuid",
     m."inserted_at",
     m."updated_at"
-FROM airbyte_internal.public_raw__stream_noora_messages as  m
+FROM public.Noora_Messages as  m
 LEFT JOIN status_pivot sp ON m.id=sp.message_id
